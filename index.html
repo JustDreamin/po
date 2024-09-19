@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-ontwerpen Yonah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #676b5c; /* Black background */
+            color: #ffffff; /* White text */
+        }
+
+        header {
+            background-color: #8e9479; /* Dark grey for header */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        /* Hamburger Menu Button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #9aa184;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #989e83;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Change to column for paragraphs */
+            align-items: flex-start;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #9aa184;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%; /* Make it full width */
+            text-align: left; /* Align text to left */
+        }
+
+        .box img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .box h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .box p {
+            font-size: 16px;
+        }
+
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #1a1a1a;
+                transition: left 0.3s ease-in-out;
+                z-index: 10;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav a {
+                margin: 15px 0;
+                font-size: 24px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .content {
+                margin-top: 60px;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            var audio = document.getElementById('menuSound');
+            nav.classList.toggle('active');
+            audio.play();  // Play sound when menu is toggled
+        }
+
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+            var nav = document.querySelector('nav');
+            nav.classList.remove('active'); // Close the menu after clicking
+        }
+
+        window.onload = function() {
+            showSection('start');
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Portfolio website</h1>
+        <!-- Hamburger Menu Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('start')">Start</a>
+        <a href="javascript:void(0);" onclick="showSection('projects')">PO2 - Havo 4</a>
+    </nav>
+
+    <div class="content">
+        <!-- Start Section -->
+        <div id="start" class="section">
+            <h2>Website voor Product ontwerpen</h2>
+            <p>Dit is mijn zelf gemaakte website.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section hidden">
+            <h2>PO2</h2>
+            <div class="container">
+                <div class="box">
+                    <h2>Opdracht</h2>
+                    <p>Voor PO2 moesten wij een product/gadget maken voor een giveaway aan kinderen van groep 7-8</p>
+                </div>
+                <div class="box">
+            <div class="container">
+                <div class="box">
+                    <img src="Sketch.png">
+                    <img src="IMG_3523.jpg">
+                    <h2>PO2 Sketch</h2>
+                    <p>Simpele sketch, ik dacht aan joysticks, omdat ik de laatste tijd veel op mijn Playstation zit, en omdat kinderen van dingen houden waar je met je handen aan kan zitten. Mijn eerste ontwerp was een erg ingewikkeld idee, een geweertje dat dingetjes af kon schieten, een paar lessen later kregen wij te horen dat ons design PIP(print in place) moest zijn. Hierdoor moest ik een ander design maken, dus ik dacht aan dingen die in je hand zitten en waarmee je kon spelen(hanteerbaar), en iets wat kan bewegen. Ik dacht dus aan een vierkant met een balletje er in, maar dit vond ik te simpel, toen dacht ik aan een controller waar meestal een joystick aan zit. Om het speelser te maken had ik het ook in een 6-hoek veranderd.</p>
+                </div>
+                <div class="box">
+                    <h2>Marktonderzoek</h2>
+                    <p>Gemaakt met meerdere mensen <a href="https://nl.pinterest.com/lyndenmartina/prod-giveaway-brainstorm" target="_blank">Bekijk op Pinterest</a></p>
+                    <h2>Mening marktonderzoek</h2>
+                    <p>Tijdens het markt onderzoek, merkte ik dat er veel leuke dingen(fidget toys) zijn waarmee je kan spelen, de meeste lijken redelijk makkelijk te maken.</p>
+                </div>
+                <div class="box">
+                    <img src="brainstorm.png">
+                    <h2>Brainstorm</h2>
+                    <p>Gemaakt met Dean, ik kwam met deze brainstorm er achter dat kinderen veel dingen met hun handen doen, dus ik dacht dat ik dit in mijn design kon doen.</p>
+                </div>
+                <div class="box">
+                    <h2>PO2 Eindproduct</h2>
+                    <p>Hier is het eindontwerp, dit ontwerp kan in elke kleur van de regenboog gekozen worden. Hierbij kan dit ook in 2 verschillende kleuren, als je printer een AMS(automated material system) heeft. Bijvoorbeeld de kleuren van de JvB vesteging Molenstraat, die de kleuren rood en blauw bij het logo heeft. Tijdens het designen een product moet je wel opletten dat er genoeg plek tussen de twee voorwerpen zit, zodat ze nog vrij kunnen bewegen. Supports zijn ook nodig omdat dat een printer niet in de lucht kan printen.</p>
+                    <img src="img1.jpg"                    
+                    height="500"
+                    width="500" />
+                    <img src="img2.jpg"
+                    height="500"
+                    width="500" />
+                    <img src="img3.jpg"
+                    height="500"
+                    width="500" />
+                    <img src="img4.jpg"
+                    height="500"
+                    width="500" />
+                    <img src="img5.jpg"
+                    height="500"
+                    width="500" />
+                </div>
+                <div class="box">
+                    <h2>Zelfreflectie</h2>
+                    <p1><u>Marktonderzoek</u></p2><br>
+                    <p2>Dit marktonderzoek heb gedaan met: Thom, Lynden en Dean. Het ging goed, het enige wat nog beter kon was de onderlinge communicatie Tijdens het markt onderzoek, merkte ik dat er veel leuke dingen(fidget toys) zijn waarmee je kan spelen, de meeste lijken redelijk makkelijk te maken. Het was dus niet moeilijk om producten te vinden. Toch hebben vele dingen niet kunnen gebruiken voor inspiratie.</p2><br>
+                    <p2><u>Brainstorm</u></p2><br>
+                    <p2>Ik en Dean hebben samen gewerkt aan deze brainstorm, tijdens het samen werken heb ik gemerkt dat je veel verschillende ideeën hebt, ik merkte hierdoor dat ik meer geduld moet hebben.</p2><br>
+                    <p2><u>Idee Ontwerp</u></p2><br>
+                    <p2>Mijn eerste ontwerp was een erg ingewikkeld idee, een geweertje dat dingetjes af kon schieten. Een paar lessen later kregen wij te horen dat ons design PIP(print in place) moest zijn. Hierdoor moest ik een ander design maken. Achteraf gezien is dat maar goed ook want het oude ontwerp zou dingen afschieten, wat voor veel ongelukken, rommel en choas had kunnen leiden. Mijn tweede ontwerp was kleiner en handzaam en eenvoudiger, namelijk een vierkant blokje met een balletje en waarmee je kan spelen. Maar ik vond dat te simpel. Toen moest ik aan een controller/joystick denken. Dat beweegt namelijk ook. Om het speelser te maken had ik het ook in een 6-hoek veranderd.</p2><br>
+                    <p2><u>Schetsen</u></p2><br>
+                    <p2>Ik had 2 schetsen gemaakt(waarvan ik er een was vergeten) ik heb ze allebij toegevoegd aan mijn website, het process was moeilijk om uit te drukken op een schets, maar dit is wel gelukt</p2><br>
+                    <p2><u>Techniek</u></p2><br>
+                    <p2>Tijdens het designen een product moet je wel opletten dat er genoeg plek tussen de twee voorwerpen zit, zodat ze nog vrij kunnen bewegen. Supports zijn ook nodig omdat dat een printer niet in de lucht kan printen.</p2><br>
+                    <p2><u>Website</u></p2><br>
+                    <p2>Ik had voor Wordpress kunnen kiezen, maar dat vond ik best saai. Omdat ik veel van computers en technologie houd leek het me veel leuker om zelf een website te bouwen. Waar ik echter op vast liep was het feit veel tijd kost om dit zelf te ontwerpen. Toen ik alle onderwerpen er in had gezet was de website niet echt aantrekkelijk. Ik heb dit nu verbeterd, en in mijn ogen ziet dit er nu een stuk beter uit. De fotos waren te groot en ik heb ze aangepast, echter hierdoor zijn de fotos een beetje vervormd. Ik kan dit nu niet meer aanpassen maar dat zal ik de volgende keer zeker doen.</p2><br>
+                    <p2><u>Verbeterpunten</u></p2><br>
+                    <p2>BIj de volgende opdracht moet ik goed opletten dat het ontwerp niet te moeilijk is. Ik weet nu dat de schetsen van het idee en het proces heel belangrijk zijn. De website bouwen kostte veel tijd, maar is voor de volgende opdracht veel makkelijker. dus heb ik meer tijd over voor het maken van een ontwerp. Ik moet zorgen dat ik de opdracht en de website iets eerder klaar heb, want dan heb ik minder stress. Tijdens het invoeren van de website was ik een aantal dingen vergeten. Omdat ik alles nog snel moest invoeren. Gelukkig heb ik de eisenlijst erbij gepakt, waardoor ik nog een aantal dingen kon aanvullen. Dit moet ik niet vergeten de volgende keer. Ik ben blij met mijn eindontwerp want het is redelijk simpel en ziet er best mooi uit.</p2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio element -->
+    <audio id="menuSound" src="nomnom.mp3" preload="auto"></audio> 
+</body>
+</html>
